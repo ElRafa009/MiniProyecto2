@@ -5,12 +5,14 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ReporteCitasComponent } from './reporte-citas/reporte-citas.component';
 import { EnlaceComponent } from './enlace/enlace.component';
 import { AcercadeComponent } from './acercade/acercade.component';
+import { PortafolioComponent } from './portafolio/portafolio.component';
 
 const routes: Routes = [
   {path: 'principal', component: PrincipalComponent },
   {path: 'reporte', component: ReporteCitasComponent },
   {path: 'menucita', component: EnlaceComponent },
   {path: 'acercade', component: AcercadeComponent },
+  {path: 'portafolio', component: PortafolioComponent },
   {path: '**', pathMatch: 'full', redirectTo: 'principal'}
 ];
 

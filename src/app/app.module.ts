@@ -19,6 +19,7 @@ import { EnlaceComponent } from './enlace/enlace.component';
 
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PortafolioComponent } from './portafolio/portafolio.component';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
@@ -31,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PrincipalComponent,
     FooterComponent,
     AcercadeComponent,
-    EnlaceComponent
+    EnlaceComponent,
+    PortafolioComponent
   ],
   imports: [
     BrowserModule,
