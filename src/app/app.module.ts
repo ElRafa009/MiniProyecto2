@@ -15,6 +15,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AcercadeComponent } from './acercade/acercade.component';
+import { EnlaceComponent } from './enlace/enlace.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AcercadeComponent } from './acercade/acercade.component';
     CitaMedicoComponent,
     PrincipalComponent,
     FooterComponent,
-    AcercadeComponent
+    AcercadeComponent,
+    EnlaceComponent
   ],
   imports: [
     BrowserModule,

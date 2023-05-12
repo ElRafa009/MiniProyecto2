@@ -1,0 +1,7 @@
+<ng-container *ngIf="mostrarMedico == 'true'; else mostrarRegistro">
+    <app-cita-medico></app-cita-medico>
+</ng-container>
+
+<ng-template #mostrarRegistro>
+    <app-registro-citas></app-registro-citas>
+</ng-template>
