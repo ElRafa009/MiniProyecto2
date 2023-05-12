@@ -1,3 +1,4 @@
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./cita-medico.component.css']
 })
 export class CitaMedicoComponent {
+  @Output() mostrarMedico = new EventEmitter<string>();
+  hover: boolean = false;
+  medico!: string;
 
+  onHover(isHovering: boolean) {
+    this.hover = isHovering;
+  }
+
+  seleccionarMedico(medico: string) {
+    this.medico = medico;
+    this.mostrarMedico.emit(medico);
+    console.log(medico + '\n' + this.mostrarMedico);
+  }
+  
+  constructor(private router: Router) { }
 }
