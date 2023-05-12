@@ -1,1 +1,71 @@
-<p>registro-citas works!</p>
+<h1>Registro de cita para {{medico}} </h1>
+<form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+  <p>
+    Nombre:
+    <input type="text" formControlName="nombre" required />
+    <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['required']">
+      (El nombre no puede quedar vacío)
+    </span>
+    <span *ngIf="this.formularioContacto.get('nombre')?.errors?.['minlength']">
+      (Debe tener como mínimo 5 caracteres)
+    </span>
+  </p>
+  <p>
+    Apellido
+    <input type="text" formControlName="apellido" required />
+    <span *ngIf="this.formularioContacto.get('apellido')?.errors?.['required']">
+      (El apellido no puede quedar vacío)
+    </span>
+    <span
+      *ngIf="this.formularioContacto.get('apellido')?.errors?.['minlength']"
+    >
+      (Debe tener como mínimo 5 caracteres)
+    </span>
+  </p>
+  <p>
+    Mail:
+    <input type="text" formControlName="mail" />
+    <span *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">
+      (El mail no puede quedar vacío)
+    </span>
+    <span *ngIf="this.formularioContacto.get('mail')?.errors?.['email']">
+      (El mail no es válido)
+    </span>
+  </p>
+  <h4>Seleccione una fecha:</h4>
+  <full-calendar
+    [options]="calendarOptions"
+    [events]="eventsPromise | async"
+  ></full-calendar>
+  <ng-container *ngIf="horario">
+    <h4>Fecha seleccionada: {{ horario }}</h4>
+  </ng-container>
+  <br />
+  <p>
+    Hora:
+    <input
+      type="time"
+      formControlName="timepo"
+      required
+      min="08:00"
+      max="20:00"
+      step="3600"
+    />
+    <span *ngIf="this.formularioContacto.get('timepo')?.errors?.['required']">
+      (La hora no puede quedar vacío)
+    </span>
+    <span *ngIf="formularioContacto.get('timepo')?.errors?.['horaInvalida']">
+      (La hora debe estar entre las 2:00pm y las 8:00pm)
+    </span>
+  </p>
+
+  <button
+    type="submit"
+    [disabled]="formularioContacto.invalid"
+    class="btn btn-outline-danger"
+  >
+    Confirmar
+  </button>
+</form>
+
+<div>{{ resultado }}</div>
