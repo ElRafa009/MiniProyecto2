@@ -1,44 +1,13 @@
+<div class="titulo"></div>
+
 <div class="container">
-    <figure>
-      <img src="https://ca-times.brightspotcdn.com/dims4/default/2215203/2147483647/strip/true/crop/4000x2250+0+209/resize/1200x675!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F50%2Fc5%2F79c335f348028e5fe988fc9b2aba%2Fla105304.jpg" alt="A windmill" />
-    </figure>
-    <figure class="landscape">
-      <img src="https://cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/62TY67Z7PPER5ZGNJVAPHK5E6Q.jpg" alt="The Clifton Suspension Bridge" />
-    </figure>
-    <figure>
-      <img src="https://c8.alamy.com/compes/2b3pkp9/farmaceutico-en-el-baile-de-disfraces-del-dr-simi-fuera-de-las-farmacias-similares-similares-pharmacy-acapulco-mexico-2b3pkp9.jpg" alt="Sunset and boats" />
-  
-    </figure>
-    <figure>
-      <img src="https://piedepagina.mx/wp-content/uploads/2020/06/pdp_medicos_farmacias_covid_Duilio_Rodriguez-1-1200x750.jpg" alt="a river in the snow" />
-     
-    </figure>
-    <figure class="landscape">
-      <img src="https://i.ytimg.com/vi/C82MRWRtxa8/maxresdefault.jpg" alt="a single checked balloon" />
-     
-    </figure>
-    <figure>
-      <img src="https://c8.alamy.com/compes/2b3pmc1/farmaceutico-en-el-baile-de-disfraces-del-dr-simi-fuera-de-las-farmacias-similares-similares-pharmacy-acapulco-mexico-2b3pmc1.jpg" alt="a hot air balloon shaped like a dog" />
-     
-    </figure>
-    <figure>
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_uY-uVyUwHUBs7tQG8RvzgkBUQ_9yCxEBQ&usqp=CAU" alt="View from a hot air balloon of other balloons" />
-     
-    </figure>
-    <figure>
-      <img src="https://images.reporteindigo.com/wp-content/uploads/2022/03/Me-pagan-por-bailar-no-por-cuidar-Dr.-Simi-huye-de-asalto-en-farmacia-VIDEO.jpeg" alt="a balloon fairground ride" />
-     
-    </figure>
-    <figure class="landscape">
-      <img src="https://cloudfront-us-east-1.images.arcpublishing.com/elfinanciero/E22SW2VASOCZL5UEUU4YJMBGUM.jpg" alt="sunrise over a harbor" />
-     
-    </figure>
-    <figure>
-      <img src="https://cdn2.mediotiempo.com/uploads/media/2022/03/27/el-video-se-hizo-viral-1.jpg" alt="three hot air balloons in a blue sky" />
+    <figure *ngFor="let item of imagenes">
       
-    </figure>
-    <figure>
-    <img src="https://quinto-poder.mx/u/fotografias/m/2022/3/28/f1280x720-10726_142401_5050.jpg" alt="the Toronto light up sign at night" />
-      
+      <div class="card">
+        <img src="{{item.link}}" />
+        <div class="text-overlay">
+          <p>{{item.descripcion}}</p>
+        </div>
+      </div> 
     </figure>
   </div>

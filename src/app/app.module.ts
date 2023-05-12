@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import {MatCardModule} from '@angular/material/card';
 
-
+import {ServicioMService} from './servicio-m.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +43,7 @@ import { PortafolioComponent } from './portafolio/portafolio.component';
     FullCalendarModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ ServicioMService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
