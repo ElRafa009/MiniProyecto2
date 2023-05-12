@@ -23,6 +23,10 @@
   .card-title {
     font-size: 1.5rem;
   }
+
+  .container {
+    padding-top: 3%
+  }
   
   .btn {
     margin-top: auto;
