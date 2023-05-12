@@ -1,1 +1,20 @@
-<p>reporte-citas works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Hora</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dato of datos, let i=index" [ngClass]="{'par': i % 2 === 0, 'impar': i % 2 === 1}">
+      <td>{{ dato.formularioContacto.nombre }}</td>
+      <td>{{ dato.formularioContacto.apellido }}</td>
+      <td>{{ dato.formularioContacto.mail }}</td>
+      <td>{{ dato.formularioContacto.timepo }}</td>
+      <td>{{ dato.horario }}</td>
+    </tr>
+  </tbody>
+</table>
