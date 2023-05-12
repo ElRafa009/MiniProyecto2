@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cita-medico',
@@ -21,5 +20,5 @@ export class CitaMedicoComponent {
     console.log(medico + '\n' + this.mostrarMedico);
   }
   
-  constructor(private router: Router) { }
+  constructor() { }
 }
