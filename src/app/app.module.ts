@@ -14,6 +14,7 @@ import { CitaMedicoComponent } from './cita-medico/cita-medico.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AcercadeComponent } from './acercade/acercade.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegistroCitasComponent,
     CitaMedicoComponent,
     PrincipalComponent,
-    FooterComponent
+    FooterComponent,
+    AcercadeComponent
   ],
   imports: [
     BrowserModule,
