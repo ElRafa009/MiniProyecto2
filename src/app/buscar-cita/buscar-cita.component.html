@@ -1,1 +1,30 @@
-<p>buscar-cita works!</p>
+<ng-container *ngIf="existe; else mostrarRegistro">
+    <h3>{{nombre}}, estas son las citas registradas para ti</h3>
+    <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Hora</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let dato of datos">
+              <tr *ngIf="dato.formularioContacto.nombre === nombre">
+                <td>{{ dato.formularioContacto.nombre }}</td>
+                <td>{{ dato.formularioContacto.apellido }}</td>
+                <td>{{ dato.formularioContacto.mail }}</td>
+                <td>{{ dato.formularioContacto.timepo }}</td>
+                <td>{{ dato.horario }}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+      </table>
+      
+</ng-container>
+
+<ng-template #mostrarRegistro>
+    <h2>No existe registro para {{nombre}}</h2>
+</ng-template>
