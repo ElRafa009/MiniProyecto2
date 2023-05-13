@@ -12,4 +12,21 @@
         </ul>
     </nav>
     <button><a [routerLink]="['menucita']">Solicita Cita</a></button>
+  <form class="d-flex" role="search">
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Buscar por nombre"
+      aria-label="Search"
+      [(ngModel)]="nombre"
+      name="nombre"
+    />
+    <button
+      class="btn btn-outline-success"
+      type="submit"
+      (click)="buscarCitas()"
+    >
+      Buscar citas
+    </button>
+  </form>
 </header>
