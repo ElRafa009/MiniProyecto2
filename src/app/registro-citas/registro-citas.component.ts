@@ -65,7 +65,7 @@ export class RegistroCitasComponent {
       Validators.required,
       Validators.minLength(5),
     ]),
-    timepo: new FormControl('', [
+    tiempo: new FormControl('', [
       Validators.required,
       this.horaValida.bind(this),
     ]),
@@ -105,7 +105,7 @@ export class RegistroCitasComponent {
 
     // Verificar si la fecha y hora seleccionadas ya existen en los datos guardados
     const fechaHoraSeleccionada = new Date(
-      this.horario + ' ' + this.formularioContacto.value.timepo
+      this.horario + ' ' + this.formularioContacto.value.tiempo
     );
     const fechaHoraExistente = datosGuardados.find(
       (dato) =>
@@ -115,31 +115,31 @@ export class RegistroCitasComponent {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Este horario ya ha sido agendado!',
-        footer: '<p >Intenta utilizando otro horario?</p>',
+        text: '¡Este horario ya ha sido agendado!',
+        footer: '<p>Intenta utilizando otro horario</p>',
       });
       // alert('La fecha y hora seleccionadas intenta seleccionando otra hora o fecha.');
     } else {
       // Guardar los datos
       const data = {
         formularioContacto: this.formularioContacto.value,
-        horario: fechaHoraSeleccionada.toISOString(),
-        medico: this.medico2,
+        horario: fechaHoraSeleccionada.toISOString().substring(0, 10),
+        medico: this.medico,
       };
       //datosGuardados.push(data);
       //localStorage.setItem('datos', JSON.stringify(datosGuardados));
       //alert("Ok");
       Swal.fire({
-        title: 'Estas seguro?',
-        text: 'No podras cambiar la agenda despues!',
+        title: '¿Estás seguro?',
+        text: '¡No podrás cambiar la agenda después!',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, aceptar!',
+        confirmButtonText: '¡Sí, aceptar!',
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire('Agendado!', 'Tu cita ha sido Agendada.', 'success');
+          Swal.fire('¡Agendado!', 'Tu cita ha sido agendada.', 'success');
           datosGuardados.push(data);
           localStorage.setItem('datos', JSON.stringify(datosGuardados));
         }
