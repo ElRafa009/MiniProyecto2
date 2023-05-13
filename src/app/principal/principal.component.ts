@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./principal.component.css']
 })
 export class PrincipalComponent {
+  selectedOption: string = "";
+  feedback: string = "";
 
+  submit() {
+    console.log(`Opción seleccionada: ${this.selectedOption}`);
+    console.log(`Comentario: ${this.feedback}`);
+  }
 }
