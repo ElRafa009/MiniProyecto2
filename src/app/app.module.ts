@@ -30,6 +30,7 @@ import {ServicioMService} from './servicio-m.service'
 // Andrew
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BuscarCitaComponent } from './buscar-cita/buscar-cita.component';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
@@ -44,6 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AcercadeComponent,
     EnlaceComponent,
     PortafolioComponent,
+    BuscarCitaComponent,
   ],
   imports: [
     BrowserModule,
