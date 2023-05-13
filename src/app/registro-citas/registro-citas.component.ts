@@ -36,10 +36,9 @@ export class RegistroCitasComponent {
   handleDateClick(arg: { dateStr: string }) {
     const selectedDate = new Date(arg.dateStr);
     const today = new Date();
-
+  
     const datosJSON = localStorage.getItem('datos');
     if (selectedDate < today) {
-      //alert('La fecha seleccionada ya ha pasado');
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
@@ -48,15 +47,32 @@ export class RegistroCitasComponent {
       });
     } else {
       const datosGuardados = JSON.parse(datosJSON || '[]');
-      const fechaYaGuardada = datosGuardados.some((data: any) => {
-        return data.horario === arg.dateStr;
-      });
-      if (fechaYaGuardada) {
+      const horasOcupadas = datosGuardados
+        .filter((data: any) => data.horario === arg.dateStr)
+        .map((data: any) => new Date(data.horario + ' ' + data.formularioContacto.tiempo));
+      if (horasOcupadas.length > 0) {
+        // la fecha ya tiene citas agendadas, verificar la hora seleccionada
+        const horasOcupadasStr = horasOcupadas.map((hora: { toISOString: () => string; }) => hora.toISOString().substring(11, 16));
+        const horaSeleccionada = new Date(arg.dateStr + ' ' + this.formularioContacto.value.tiempo);
+        const horaSeleccionadaStr = horaSeleccionada.toISOString().substring(11, 16);
+        if (horasOcupadasStr.includes(horaSeleccionadaStr)) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'La hora seleccionada ya está ocupada, por favor selecciona otra hora',
+            footer: '<p>Intenta seleccionando otra hora para tu cita</p>',
+          });
+        } else {
+          // la fecha seleccionada tiene citas agendadas pero la hora seleccionada está disponible
+          this.horario = arg.dateStr;
+        }
       } else {
+        // la fecha seleccionada no tiene citas agendadas, seleccionar la hora
         this.horario = arg.dateStr;
       }
     }
   }
+  
 
   formularioContacto = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -67,21 +83,8 @@ export class RegistroCitasComponent {
     ]),
     tiempo: new FormControl('', [
       Validators.required,
-      this.horaValida.bind(this),
     ]),
-    //fecha: new  FormControl(this.horario , [Validators.minLength(10)])
   });
-
-  horaValida(control: FormControl): { [s: string]: boolean } | null {
-    const horaSeleccionada = new Date(control.value);
-    const horaMinima = new Date(1970, 0, 1, 14); // 2:00pm
-    const horaMaxima = new Date(1970, 0, 1, 20); // 8:00pm
-
-    if (horaSeleccionada < horaMinima || horaSeleccionada > horaMaxima) {
-      return { horaInvalida: true };
-    }
-    return null;
-  }
 
   submit() {
     if (this.formularioContacto.valid)
@@ -123,7 +126,7 @@ export class RegistroCitasComponent {
       // Guardar los datos
       const data = {
         formularioContacto: this.formularioContacto.value,
-        horario: fechaHoraSeleccionada.toISOString(),
+        horario: fechaHoraSeleccionada.toISOString().substring(0, 10),
         medico: this.medico,
       };
       //datosGuardados.push(data);
