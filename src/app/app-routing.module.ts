@@ -6,7 +6,7 @@ import { ReporteCitasComponent } from './reporte-citas/reporte-citas.component';
 import { EnlaceComponent } from './enlace/enlace.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { PortafolioComponent } from './portafolio/portafolio.component';
-import { BuscarCitaComponent } from './buscar-citar/buscar-citar.component';
+import { BuscarCitaComponent } from './buscar-cita/buscar-cita.component';
 
 const routes: Routes = [
   {path: 'principal', component: PrincipalComponent },
