@@ -1,5 +1,5 @@
 .banner {
-    background-image: linear-gradient(rgba(116, 235, 195, 0.5), rgba(21, 39, 245, 0.5)), url("/assets/img/fondo_banner.jpg");
+    background-image: linear-gradient(rgba(116, 235, 195, 0.5), rgba(21, 39, 245, 0.5)), url("/src/assets/img/fondo_banner.jpg");
     background-size: cover;
     background-position: center;
     color: #fff;
