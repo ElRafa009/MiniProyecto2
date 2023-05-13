@@ -123,7 +123,7 @@ export class RegistroCitasComponent {
       // Guardar los datos
       const data = {
         formularioContacto: this.formularioContacto.value,
-        horario: fechaHoraSeleccionada.toISOString().substring(0, 10),
+        horario: fechaHoraSeleccionada.toISOString(),
         medico: this.medico,
       };
       //datosGuardados.push(data);
