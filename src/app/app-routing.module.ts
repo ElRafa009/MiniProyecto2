@@ -6,6 +6,7 @@ import { ReporteCitasComponent } from './reporte-citas/reporte-citas.component';
 import { EnlaceComponent } from './enlace/enlace.component';
 import { AcercadeComponent } from './acercade/acercade.component';
 import { PortafolioComponent } from './portafolio/portafolio.component';
+import { BuscarCitarComponent } from './buscar-citar/buscar-citar.component';
 
 const routes: Routes = [
   {path: 'principal', component: PrincipalComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'menucita', component: EnlaceComponent },
   {path: 'acercade', component: AcercadeComponent },
   {path: 'portafolio', component: PortafolioComponent },
+  {path: 'citas/:nombre', component: BuscarCitarComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'principal'}
 ];
 
