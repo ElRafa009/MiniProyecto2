@@ -45,16 +45,16 @@
     Hora:
     <input
       type="time"
-      formControlName="timepo"
+      formControlName="tiempo"
       required
       min="08:00"
       max="20:00"
       step="3600"
     />
-    <span *ngIf="this.formularioContacto.get('timepo')?.errors?.['required']">
+    <span *ngIf="this.formularioContacto.get('tiempo')?.errors?.['required']">
       (La hora no puede quedar vacío)
     </span>
-    <span *ngIf="formularioContacto.get('timepo')?.errors?.['horaInvalida']">
+    <span *ngIf="formularioContacto.get('tiempo')?.errors?.['horaInvalida']">
       (La hora debe estar entre las 2:00pm y las 8:00pm)
     </span>
   </p>
