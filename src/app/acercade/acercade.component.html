@@ -2,8 +2,8 @@
 
     <!––Imagen con Texto, ¿QUIENES SOMOS?––>
         <div id="quees">
-
             <div id="textoQueEs">
+                <br><br><br>
                 <!-- <p style="font-size: 40px; color: blue; font-weight: bold;">Farmacias Parecidas</p><br>-->
                 <p style="font-size: 25px;">Somos un centro médico de excelencia que se dedica a proporcionar atención
                     médica
@@ -16,15 +16,15 @@
             <!-- BARAA CON ICONOS  -->
             <div id="tarCirculares">
                 <div id="tarAvatar">
-                    <img src="../assets/imagenes/llamada.png" alt="Llamada emergencia" class="avatar">
+                    <img src="../assets/imagenes/llamada.png" alt="Llamada emergencia" class="avatar"><br><br>
                     <h1 id="txtAnimacion1"><b>Emergencia</b></h1>
-                    <p style="color: #011f6f">
+                    <p style="color: #011f6f;">
                         Trasladamos a los pacientes desde el lugar donde se produce la situación
                     </p>
                 </div>
 
                 <div id="tarAvatar">
-                    <img src="../assets/imagenes/estetoscopio.png" alt="Llamada emergencia" class="avatar">
+                    <img src="../assets/imagenes/estetoscopio.png" alt="Llamada emergencia" class="avatar"><br><br>
                     <h1 id="txtAnimacion1"><b>El mejor trato</b></h1>
                     <p style="color: #011f6f">
                         Creamos un ambiente cómodo y seguro para brindarte una mejor atención
@@ -32,14 +32,14 @@
                 </div>
 
                 <div id="tarAvatar">
-                    <img src="../assets/imagenes/doctor.png" alt="Llamada emergencia" class="avatar">
+                    <img src="../assets/imagenes/doctor.png" alt="Llamada emergencia" class="avatar"><br><br>
                     <h1 id="txtAnimacion1"><b>Personal médico</b></h1>
                     <p style="color: #011f6f">
                         Dispuestos a ayudarte de la manera más atenta
                     </p>
                 </div>
                 <div id="tarAvatar">
-                    <img src="../assets/imagenes/ambulancia.png" alt="Llamada emergencia" class="avatar">
+                    <img src="../assets/imagenes/ambulancia.png" alt="Llamada emergencia" class="avatar"><br><br>
                     <h1 id="txtAnimacion1"><b>Doctores calificados</b></h1>
                     <p style="color: #011f6f">
                         Responsables de las decisiones que afectan al cuidado del paciente
@@ -50,7 +50,6 @@
             <div id="dos">
                 <img src="../assets/imagenes/corazon.png" style="width: 70px;" alt="">
                 <p style="margin-left: 30px; margin-right: 30px;">EN NUESTRO HOSPITAL, <b>NOS ESFORZAMOS</b></p>
-                <br>
                 <p style="font-size: 20px;">por brindar un ambiente acogedor y seguro para nuestros pacientes, donde se
                     sientan cómodos y confiados de que están recibiendo el mejor cuidado posible. Además, nos aseguramos
                     de
@@ -68,7 +67,6 @@
                         <h3>Objetivo</h3>
                     </div>
                     <div class="face back">
-                        <h3>Objetivo</h3>
                         <p>Mejorar la calidad de vida de nuestros pacientes a través de la prevención, diagnóstico y
                             tratamiento de enfermedades. Nos esforzamos por ofrecer una atención médica personalizada y
                             compasiva a
@@ -86,7 +84,6 @@
                         <h3>Visión</h3>
                     </div>
                     <div class="face back">
-                        <h3>Visión</h3>
                         <p>Convertirnos en un centro médico líder en el país, reconocido por nuestra
                             excelencia clínica, nuestros servicios de atención al paciente y nuestra capacidad de
                             proporcionar
@@ -102,7 +99,6 @@
                         <h3>Misión</h3>
                     </div>
                     <div class="face back">
-                        <h3>Misión</h3>
                         <p>Proporcionar atención médica de alta calidad y accesible para todos, sin importar su origen
                             socioeconómico. Estamos comprometidos en mejorar la salud y el bienestar de la comunidad a
                             la que
@@ -114,95 +110,97 @@
                 </div>
             </div>
             <br><br>
-            <h1 style="text-align: center;">NOSOTROS</h1>
+            <div style="background-color:rgb(9, 74, 136); padding: 30px;">
+                <h1 style="text-align: center;  font-size: 40px; color:white; "><b>CONOCE AL EQUIPO</b></h1>
 
-            <div id="nosotros">
-                <div class="card-alumno" style="margin-right: 250px;margin-left: 200px;">
-                    <div class="card_landing" style="--i:url(../assets/imagenes/andrew.jpeg)">
-                        <h6>{{andrew.nombre}}</h6>
-                    </div>
-                    <div class="card_info">
-                        <div class="head">
-                            <p class="title">{{andrew.nombre}}</p>
-                            <div class="description">
+
+                <div id="nosotros">
+                    <div class="card-alumno" style="margin-right: 250px;margin-left: 200px;">
+                        <div class="card_landing" style="--i:url(../assets/imagenes/andrew.jpeg)">
+                            <h6>{{andrew.nombre}}</h6>
+                        </div>
+                        <div class="card_info">
+                            <div class="head">
+                                <p class="title">{{andrew.nombre}}</p>
+                                <div class="description">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>{{andrew.descripcion}}</p>
                             </div>
                         </div>
-                        <div class="content">
-                            <p>{{andrew.descripcion}}</p>
+                    </div>
+
+                    <div class="card-alumno" style="margin-right: 250px;">
+                        <div class="card_landing" style="--i:url(../assets/imagenes/luis.png)">
+                            <h6>{{luis.nombre}}</h6>
+                        </div>
+                        <div class="card_info">
+                            <div class="head">
+                                <p class="title">{{luis.nombre}}</p>
+                                <div class="description">
+                                </div>
+                            </div>
+                            <div class="content" style="font-size: 13px;">
+                                <p>{{luis.descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-alumno" style="margin-right: 250px;">
+                        <div class="card_landing" style="--i:url(../assets/imagenes/jacqueline.png)">
+                            <h6>{{jacqueline.nombre}}</h6>
+                        </div>
+                        <div class="card_info">
+                            <div class="head">
+                                <p class="title">{{jacqueline.nombre}}</p>
+                                <div class="description">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>{{jacqueline.descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="nosotros">
+                    <div class="card-alumno" style="margin-left: 20px;">
+                        <div class="card_landing" style="--i:url(../assets/imagenes/fabian.jpeg)">
+                            <h6>{{fabian.nombre}}</h6>
+                        </div>
+                        <div class="card_info">
+                            <div class="head">
+                                <p class="title">{{fabian.nombre}}</p>
+                                <div class="description">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>{{fabian.descripcion}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-alumno" style="margin-left: 300px;">
+                        <div class="card_landing" style="--i:url(../assets/imagenes/rafa.jpeg)">
+                            <h6>{{rafael.nombre}}</h6>
+                        </div>
+                        <div class="card_info">
+                            <div class="head">
+                                <p class="title">{{rafael.nombre}}</p>
+                                <div class="description">
+                                </div>
+                            </div>
+                            <div class="content">
+                                <p>{{rafael.descripcion}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="card-alumno" style="margin-right: 250px;">
-                    <div class="card_landing" style="--i:url(../assets/imagenes/luis.png)">
-                        <h6>{{luis.nombre}}</h6>
-                    </div>
-                    <div class="card_info">
-                        <div class="head">
-                            <p class="title">{{luis.nombre}}</p>
-                            <div class="description">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>{{luis.descripcion}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-alumno" style="margin-right: 250px;">
-                    <div class="card_landing" style="--i:url(../assets/imagenes/jacqueline.png)">
-                        <h6>{{jacqueline.nombre}}</h6>
-                    </div>
-                    <div class="card_info">
-                        <div class="head">
-                            <p class="title">{{jacqueline.nombre}}</p>
-                            <div class="description">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>{{jacqueline.descripcion}}</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div id="nosotros">
-                <div class="card-alumno" style="margin-left: 20px;">
-                    <div class="card_landing" style="--i:url(../assets/imagenes/fabian.jpeg)">
-                        <h6>{{fabian.nombre}}</h6>
-                    </div>
-                    <div class="card_info">
-                        <div class="head">
-                            <p class="title">{{fabian.nombre}}</p>
-                            <div class="description">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>{{fabian.descripcion}}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-alumno" style="margin-left: 300px;">
-                    <div class="card_landing" style="--i:url(../assets/imagenes/rafa.jpeg)">
-                        <h6>{{rafael.nombre}}</h6>
-                    </div>
-                    <div class="card_info">
-                        <div class="head">
-                            <p class="title">{{rafael.nombre}}</p>
-                            <div class="description">
-                            </div>
-                        </div>
-                        <div class="content">
-                            <p>{{rafael.descripcion}}</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
             <br><br>
-            <h1 style="text-align: center;">UBÍCANOS</h1>
+            <h1 style="text-align: center;font-size: 40px; "><b>UBÍCANOS</b></h1>
             <br><br>
 
 

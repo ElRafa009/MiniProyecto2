@@ -17,12 +17,6 @@
     padding: 30px;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-}
 
 body {
     flex-wrap: wrap;
@@ -31,7 +25,6 @@ body {
     min-height: 100vh;
     background: white;
     text-align: center;
-    font-family: 'Lato', sans-serif;
 }
 
 
@@ -54,7 +47,7 @@ body {
 
 .card .front {
     transform: perspective(600px) rotateY(0deg);
-    box-shadow: 0 5px 10px blue;
+    box-shadow: 0 5px 10px  rgb(9, 74, 136);
 }
 
 .card .face front img {
@@ -73,7 +66,6 @@ body {
     color: #fff;
     background: rgba(0,0,0,.4);
     text-align: center;
-    font-family: 'Lato', sans-serif;
     font-size: 30px;
 }
 
@@ -85,8 +77,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    text-align: center;
-    box-shadow: 0 5px 10px blue;
+    text-align: justify;
+    box-shadow: 0 5px 10px  rgb(9, 74, 136);
     -webkit-transform: perspective(600px) rotateY(180deg);
     -moz-transform: perspective(600px) rotateY(180deg);
     -ms-transform: perspective(600px) rotateY(180deg);
@@ -96,9 +88,6 @@ body {
 .card .back h3 {
     font-size: 30px;
     margin-top: 20px;
-    font-family: 'Lato', sans-serif;
-    
-
 }
 
 .card .back p {
@@ -127,10 +116,7 @@ body {
     padding: 30px;
     font-size: 30px;
     color: white;
-}
-
-p{
-    font-family: 'Lato', sans-serif;
+    line-height: 2.5;
 }
 
 .avatar {
@@ -144,6 +130,7 @@ p{
 
 #tarCirculares{
     display: flex;
+    line-height: 2;
 }
 
 #tarAvatar{
@@ -157,10 +144,9 @@ p{
 #nosotros{
     display: flex;
 text-align: center;
-    background: white;
+    background:rgb(9, 74, 136);
     padding: 30px;
     justify-content: center;
-    margin-right: 50px;
 }
 
 .card-alumno{
@@ -210,13 +196,13 @@ text-align: center;
 
 .card_info .head {
     padding: 5px 0;
-    border-bottom: solid 1px blue;
+    border-bottom: solid 1px rgb(9, 74, 136);
 }
 
 .card_info .head .title {
     font-size: 20px;
     font-weight: 700;
-    color: blue;
+    color:rgb(9, 74, 136);
 }
 
 .card_info .head .description {
@@ -236,6 +222,7 @@ text-align: center;
 
 .card_info .content {
     margin-top: 15px;
+    text-align: justify;
 }
 
 #contenedorMapa{

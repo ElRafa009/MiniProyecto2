@@ -15,7 +15,7 @@ export class AcercadeComponent {
 
   luis: usuario = {
     nombre: "Luis Javier",
-    descripcion: "Estudiante de la UAA de la carrera de ing en sistemas computacionales del salón abajo de los baños que están cerca del jardín de las generaciones",
+    descripcion: "Estudiante de la UAA de la carrera de Ing. en Sistemas Computacionales del salón abajo de los baños que están cerca del jardín de las generaciones",
   }
 
   jacqueline: usuario = {
