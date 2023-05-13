@@ -1,13 +1,14 @@
-<div class="titulo"></div>
 
-<div class="container">
-    <figure *ngFor="let item of imagenes">
-      
-      <div class="card">
-        <img src="{{item.link}}" />
-        <div class="text-overlay">
-          <p>{{item.descripcion}}</p>
-        </div>
+<body>
+    <div class="container">
+        <figure *ngFor="let item of imagenes">
+          
+          <div class="card">
+            <img src="{{item.link}}" />
+            <div class="text-overlay">
+              <p>{{item.descripcion}}</p>
+            </div>
+          </div> 
+        </figure>
       </div> 
-    </figure>
-  </div>
+</body>
