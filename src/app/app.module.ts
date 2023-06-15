@@ -32,6 +32,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BuscarCitaComponent } from './buscar-cita/buscar-cita.component';
 import { DomseguroPipe } from './domseguro.pipe';
+import { LoginComponent } from './login/login.component';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { DomseguroPipe } from './domseguro.pipe';
     PortafolioComponent,
     BuscarCitaComponent,
     DomseguroPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
