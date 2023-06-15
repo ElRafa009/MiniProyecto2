@@ -1,11 +1,11 @@
 #map { height: 500px; }
 
 #quees{
-    background-image: linear-gradient(rgba(116, 235, 195, 0.5), rgba(21, 39, 245, 0.5)),url("/src/assets/imagenes/medico.jpg");
+    background-image: linear-gradient(rgba(116, 235, 195, 0.5), rgba(21, 39, 245, 0.5)),url("../../assets/imagenes/medico.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 350px;
+    height: 400px;
 }
 
 #textoQueEs{

@@ -1,0 +1,144 @@
+{
+  "configVersion": 1,
+  "timestamp": 1686870475140,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main.8bb092b97d1e3616.js",
+        "/manifest.webmanifest",
+        "/polyfills.fe29f68d47c4011e.js",
+        "/runtime.83c4226793917f82.js",
+        "/scripts.6f1d65a1847f4dec.js",
+        "/styles.275a45e268ac9414.css"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.gstatic\\.com\\/s\\/ubuntu\\/v20\\/4iCs6KVjbNBYlgoKfw72\\.woff2",
+        "https:\\/\\/fonts\\.gstatic\\.com\\/s\\/roboto\\/v30\\/KFOmCnqEu92Fr1Mu4mxKKTU1Kg\\.woff2",
+        "https:\\/\\/fonts\\.googleapis\\.com\\/css2\\?family=Ubuntu&display=swap",
+        "https:\\/\\/unpkg\\.com\\/leaflet@1\\.9\\.3\\/dist\\/leaflet\\.css"
+      ]
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/Media/dentista.jpg",
+        "/assets/Media/doctor.webp",
+        "/assets/Media/opto.jpg",
+        "/assets/Media/veteri.jpg",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/imagenes/ambulancia.png",
+        "/assets/imagenes/andrew.jpeg",
+        "/assets/imagenes/corazon.png",
+        "/assets/imagenes/doctor.png",
+        "/assets/imagenes/estetoscopio.png",
+        "/assets/imagenes/fabian.jpeg",
+        "/assets/imagenes/jacqueline.png",
+        "/assets/imagenes/llamada.png",
+        "/assets/imagenes/luis.png",
+        "/assets/imagenes/medico.jpg",
+        "/assets/imagenes/medico1.jpg",
+        "/assets/imagenes/mision.jpg",
+        "/assets/imagenes/objetivo.jpg",
+        "/assets/imagenes/persona.png",
+        "/assets/imagenes/rafa.jpeg",
+        "/assets/imagenes/vision.jpg",
+        "/assets/img/dos.png",
+        "/assets/img/fondo_banner.jpg",
+        "/assets/img/footer/simi.png",
+        "/assets/img/navbar/simi.png",
+        "/assets/img/tres.jpeg",
+        "/assets/img/uno.png",
+        "/fondo_banner.4810b44d69f8d332.jpg",
+        "/medico.96b256981d6092ab.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/assets/Media/dentista.jpg": "aafb05c658db665cdb7c251fc5418f52aa95ebbd",
+    "/assets/Media/doctor.webp": "bd19a01dd31b8d53e70fe09e56f06a79364d9e2f",
+    "/assets/Media/opto.jpg": "6302e45416548ae238aeffdf550024829d5c802e",
+    "/assets/Media/veteri.jpg": "9951ebca98289df879178618fd6bd8c3e8136684",
+    "/assets/icons/icon-128x128.png": "4ef8adc113f701de8311dcf85d1b69b5da05dc90",
+    "/assets/icons/icon-144x144.png": "e4a84b20ca1257da2d9e7a4e45acab8ea91e673f",
+    "/assets/icons/icon-152x152.png": "8f3d4315c0e213f245fa30fec6bf68e0e42872d3",
+    "/assets/icons/icon-192x192.png": "0be40a6c372cb896c88c1065c9a52d1163abf2c6",
+    "/assets/icons/icon-384x384.png": "d67dcb806c14097dae9c41f3041d8c4ceb1317c2",
+    "/assets/icons/icon-512x512.png": "e0cbc9f1d99cab92867eb0db3d37fab171bf10f0",
+    "/assets/icons/icon-72x72.png": "dd2319f92f86ecdd5ef3992a4f84974e5f63c52e",
+    "/assets/icons/icon-96x96.png": "fd01bb1f0462cec1a6efb8d3fc79295120e91d7c",
+    "/assets/imagenes/ambulancia.png": "53844ac69b81a46e92a80c88396ea49e1867e8de",
+    "/assets/imagenes/andrew.jpeg": "4943e49b301363f499a0e1404a961a1a5060f3ec",
+    "/assets/imagenes/corazon.png": "7992aa26691736f30622639ac6246c7d68c76517",
+    "/assets/imagenes/doctor.png": "8afb4e2df69dfe300412f0eb7890f2548d75563b",
+    "/assets/imagenes/estetoscopio.png": "32e384e08095e2791489b71a7cf32396c055ead6",
+    "/assets/imagenes/fabian.jpeg": "6b2a23c34285ebeb4b6d34ed78cdd8137fdef8f6",
+    "/assets/imagenes/jacqueline.png": "1c1f03ba0c4e00f86b59e125fd850d08d4cbaa95",
+    "/assets/imagenes/llamada.png": "e593529227e3c00c45aef3db5518131781cf21df",
+    "/assets/imagenes/luis.png": "53df8f33cfd540cde88c4f87bc33c3d400d86b50",
+    "/assets/imagenes/medico.jpg": "e213a46a3f2369aed6b5421b1e4e9de230de8f94",
+    "/assets/imagenes/medico1.jpg": "bcb58ac0e9573cd5d6de1e86353fbf1f9aeb3c2e",
+    "/assets/imagenes/mision.jpg": "7ebc69ef3375f39df56ba10d839947e7eb572193",
+    "/assets/imagenes/objetivo.jpg": "f44afa6f22e6b1ba370d034eb6ef850774d2604c",
+    "/assets/imagenes/persona.png": "19305bb4af47e9455306e2f0d48c8287ad1096df",
+    "/assets/imagenes/rafa.jpeg": "0591a6a1cad73801f7c126fd0530afc8df39e252",
+    "/assets/imagenes/vision.jpg": "d5c2d30f0ba3c810cb62c29b5d751fee22ebf297",
+    "/assets/img/dos.png": "7464b1a10c6b9fc653db18675531d2b74d83c9ae",
+    "/assets/img/fondo_banner.jpg": "8cc65aa00dc0999192172521a4d18631c2574969",
+    "/assets/img/footer/simi.png": "baa209318030eddd299e69c1ddf266f62d87b099",
+    "/assets/img/navbar/simi.png": "ccd3f70c52b6b3a8007403ecbc6014ecbd910e69",
+    "/assets/img/tres.jpeg": "9312f32982c3dc5dfff44ea5226bb2cce1400b00",
+    "/assets/img/uno.png": "6a19d58431155dec7cd9a0b953e2e6c48f8731e8",
+    "/favicon.ico": "6d8b206e23399dd5cb251c8fb49cc53075b9444b",
+    "/fondo_banner.4810b44d69f8d332.jpg": "8cc65aa00dc0999192172521a4d18631c2574969",
+    "/index.html": "e1265145d5af289c0204cb07012d4e3668503274",
+    "/main.8bb092b97d1e3616.js": "e18a49e08760e6ee10a36af64e3c1fab0c296ec3",
+    "/manifest.webmanifest": "a0bd568d070f0c53d7aaeeca4d1424b01c5037fd",
+    "/medico.96b256981d6092ab.jpg": "e213a46a3f2369aed6b5421b1e4e9de230de8f94",
+    "/polyfills.fe29f68d47c4011e.js": "5ec8b8d9b2a0cc70e33ed5a92d6997d33f911bc5",
+    "/runtime.83c4226793917f82.js": "568ba5881e2b6bd1eff2549d600f1f496a8214cf",
+    "/scripts.6f1d65a1847f4dec.js": "b4921a610a95c3abef6f4b7567b8397606401d0a",
+    "/styles.275a45e268ac9414.css": "4948d200645570d6570979f7951d255115a92e99"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

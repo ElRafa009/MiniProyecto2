@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -32,6 +32,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BuscarCitaComponent } from './buscar-cita/buscar-cita.component';
 import { DomseguroPipe } from './domseguro.pipe';
+import { ServiceWorkerModule } from '@angular/service-worker';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
@@ -63,7 +64,13 @@ import { DomseguroPipe } from './domseguro.pipe';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [ ServicioMService],
   bootstrap: [AppComponent]

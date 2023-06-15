@@ -37,7 +37,7 @@ nav li{
 a,button{
     font-size: 18px;
     font-weight: 500;
-    color: #fff;
+    color: #424242;
     text-decoration: none;
     cursor: pointer;
 }
@@ -64,4 +64,5 @@ form input{
     width: 150px;
     margin: 0px 10px;
     border: 1px solid black;
+    font-size: 15px;
 }
