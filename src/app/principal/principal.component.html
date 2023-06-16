@@ -1,26 +1,29 @@
 <div class="banner">
-    <div class="banner-img-container">
-      <img src="assets/img/principal/fondo_banner.jpg" alt="Imagen de fondo del banner">
-    </div>
-    <h1>Bienvenido a Farmacias Parecidas</h1>
-    <p>Parecido pero de un precio inferior</p>
+  <div class="banner-img-container">
+    <img
+      src="assets/img/principal/fondo_banner.jpg"
+      alt="Imagen de fondo del banner"
+    />
+  </div>
+  <h1>Bienvenido a Farmacias Parecidas</h1>
+  <p>Parecido pero de un precio inferior</p>
 </div>
 <div class="recomendacion">
-<mat-grid-list cols="3" rowHeight="250px">
+  <mat-grid-list cols="3" rowHeight="250px">
     <mat-grid-tile>
-      <img src="assets/img/principal/uno.png">
+      <img src="assets/img/principal/uno.png" />
       <mat-grid-tile-footer>
         <h3>Precios más bajos</h3>
       </mat-grid-tile-footer>
     </mat-grid-tile>
     <mat-grid-tile>
-      <img src="assets/img/principal/dos.png">
+      <img src="assets/img/principal/dos.png" />
       <mat-grid-tile-footer>
         <h3>Los mejores doctores</h3>
       </mat-grid-tile-footer>
     </mat-grid-tile>
     <mat-grid-tile>
-      <img src="assets/img/principal/tres.jpeg">
+      <img src="assets/img/principal/tres.jpeg" />
       <mat-grid-tile-footer>
         <h3>Amor a los gatos</h3>
       </mat-grid-tile-footer>
@@ -29,30 +32,43 @@
 </div>
 
 <iframe
-  style="display:block;margin: 30px auto;"
+  style="display: block; margin: 30px auto"
   width="560"
   height="315"
-  [src]="video | domseguro:'https://www.youtube.com/embed/' "
+  [src]="video | domseguro : 'https://www.youtube.com/embed/'"
   frameborder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-inpicture"
   allowfullscreen
 ></iframe>
 
 <section class="appointment-section">
-    <div class="appointment-container">
-      <h2>Agenda una cita en nuestra farmacia</h2>
-      <p>Para agendar una cita en nuestra farmacia, sigue los siguientes pasos:</p><br>
-      <ol>
-        <li><span>1</span> Ingresa a nuestra página web y selecciona la opción de "Solicita cita".</li><br><br>
-        <li><span>2</span> Llena tus datos personales en el formulario.</li><br><br>
-        <li><span>3</span> Selecciona la fecha y la hora que más te convenga para tu cita.</li><br><br>
-        <li><span>4</span> ¡Listo! Te esperamos en nuestra farmacia el día y hora que señalaste.</li>
-      </ol>
-    </div>
-  </section>
+  <div class="appointment-container">
+    <h2>Agenda una cita en nuestra farmacia</h2>
+    <p>
+      Para agendar una cita en nuestra farmacia, sigue los siguientes pasos:
+    </p>
+    <br />
+    <ol>
+      <li>
+        <span>1</span> Ingresa a nuestra página web y selecciona la opción de
+        "Solicita cita".
+      </li>
+      <br /><br />
+      <li><span>2</span> Llena tus datos personales en el formulario.</li>
+      <br /><br />
+      <li>
+        <span>3</span> Selecciona la fecha y la hora que más te convenga para tu
+        cita.
+      </li>
+      <br /><br />
+      <li>
+        <span>4</span> ¡Listo! Te esperamos en nuestra farmacia el día y hora
+        que señalaste.
+      </li>
+    </ol>
+  </div>
+</section>
 <div class="encuesta">
-
-
   <mat-card>
     <mat-card-title>Encuesta de satisfacción</mat-card-title>
     <mat-card-content>
@@ -63,12 +79,15 @@
         <mat-radio-button value="3">Poco satisfecho</mat-radio-button>
       </mat-radio-group>
       <mat-form-field>
-        <textarea matInput placeholder="¿Por qué?" [(ngModel)]="feedback"></textarea>
+        <textarea
+          matInput
+          placeholder="¿Por qué?"
+          [(ngModel)]="feedback"
+        ></textarea>
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button color="primary" (click)="submit()">Enviar</button>
     </mat-card-actions>
   </mat-card>
-
 </div>

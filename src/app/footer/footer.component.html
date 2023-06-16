@@ -1,42 +1,75 @@
 <footer class="bg-dark text-white">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Acerca de nosotros</h5>
-                <p class="text-muted">Somos una farmacia con servicio de antencion medica por medio de citas programadas.
-                    contamos con multiples especialistas y servicios medico para anteder tus malestares y necesidades de
-                    la salud</p>
-                <p class="text-muted">Esto es un proyecto universitario</p>
-                <ul class="list-inline mt-4">
-                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
-                    <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-4">Contactanos</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-3"><i class="fas fa-map-marker-alt me-2"></i>Calle José María Bocanegra #701 Aguascalientes, Ags</li>
-                    <li class="mb-3"><i class="fas fa-envelope me-2"></i><a href="simi:info@gmail.com"
-                            class="text-white">famrmaciasParecidas@gmail.com</a></li>
-                    <li class="mb-3"><i class="fas fa-phone me-2"></i><a href="tel:+1-123-456-7890"
-                            class="text-white">+1 (123) 456-7890</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
-                <h5 class="text-uppercase mb-4">links rapidos</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-3"><a [routerLink]="['principal']" class="text-white">Home</a></li>
-                    <li class="mb-3"><a [routerLink]="['reporte']" class="text-white">Agenda</a></li>
-                    <li class="mb-3"><a [routerLink]="['acercade']" class="text-white">Acerca de nosotros</a></li>
-                    <li class="mb-3"><a [routerLink]="['portafolio']" class="text-white">portafolio</a></li>
-                </ul>
-            </div>
-            <div class="col-md-12 col-lg-3">
-                <img src="assets/img/footer/simi.png" alt="">
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Acerca de nosotros</h5>
+        <p class="text-muted">
+          Somos una farmacia con servicio de atención médica por medio de citas
+          programadas. Contamos con múltiples especialistas y servicios médicos
+          para atender tus malestares y necesidades de salud.
+        </p>
+        <p class="text-muted">Esto es un proyecto universitario</p>
 
-            </div>
+        <div class="qr">
+          <p class="movimiento" id="mensaje">Obteniendo promoción QR...</p>
+          <canvas id="QR"></canvas>
         </div>
+
+        <ul class="list-inline mt-4">
+          <li class="list-inline-item">
+            <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-4">Contáctanos</h5>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <i class="fas fa-map-marker-alt me-2"></i>Calle José María Bocanegra
+            #701 Aguascalientes, Ags
+          </li>
+          <li class="mb-3">
+            <i class="fas fa-envelope me-2"></i
+            ><a href="simi:info@gmail.com" class="text-white"
+              >farmaciasParecidas@gmail.com</a
+            >
+          </li>
+          <li class="mb-3">
+            <i class="fas fa-phone me-2"></i
+            ><a href="tel:+1-123-456-7890" class="text-white"
+              >+1 (123) 456-7890</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4 col-lg-3 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-4">enlaces rápidos</h5>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <a [routerLink]="['principal']" class="text-white">Home</a>
+          </li>
+          <li class="mb-3">
+            <a [routerLink]="['reporte']" class="text-white">Agenda</a>
+          </li>
+          <li class="mb-3">
+            <a [routerLink]="['acercade']" class="text-white"
+              >Acerca de nosotros</a
+            >
+          </li>
+          <li class="mb-3">
+            <a [routerLink]="['portafolio']" class="text-white">Portafolio</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-12 col-lg-3">
+        <img src="assets/img/footer/simi.png" alt="" />
+      </div>
     </div>
+  </div>
 </footer>
