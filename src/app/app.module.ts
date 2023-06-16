@@ -36,7 +36,11 @@ import { DomseguroPipe } from './domseguro.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { ContactoComponent } from './contacto/contacto.component';
 import { AyudaPreguntasComponent } from './ayuda-preguntas/ayuda-preguntas.component';
+import { GraficaComponent } from './grafica/grafica.component';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+//Jacky Graficas
+import { Chart} from 'chart.js';
 
 @NgModule({
   declarations: [
@@ -52,8 +56,6 @@ import { AyudaPreguntasComponent } from './ayuda-preguntas/ayuda-preguntas.compo
     PortafolioComponent,
     BuscarCitaComponent,
     DomseguroPipe,
-    ContactoComponent,
-    AyudaPreguntasComponent,
   ],
   imports: [
     BrowserModule,
