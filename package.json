@@ -27,6 +27,7 @@
     "@fullcalendar/interaction": "^6.1.7",
     "accessibility": "^4.5.7",
     "bootstrap": "^5.2.3",
+    "chart.js": "^4.3.0",
     "jquery": "^3.6.4",
     "leaflet": "^1.9.3",
     "popper.js": "^1.16.1",

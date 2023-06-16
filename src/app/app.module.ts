@@ -33,7 +33,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BuscarCitaComponent } from './buscar-cita/buscar-cita.component';
 import { DomseguroPipe } from './domseguro.pipe';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { GraficaComponent } from './grafica/grafica.component';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+//Jacky Graficas
+import { Chart} from 'chart.js';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     PortafolioComponent,
     BuscarCitaComponent,
     DomseguroPipe,
+    GraficaComponent,
   ],
   imports: [
     BrowserModule,
