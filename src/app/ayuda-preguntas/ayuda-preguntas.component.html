@@ -1,1 +1,17 @@
-<p>ayuda-preguntas works!</p>
+<div class="faq-container">
+    <h1>Preguntas frecuentes</h1>
+    <div *ngFor="let faq of faqs" class="faq-item">
+      <h2>{{ faq.question }}</h2>
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+  
+  <div class="help-container">
+    <h1>Sección de Ayuda</h1>
+    <div *ngFor="let section of sections" class="section-item">
+      <h2>{{ section.title }}</h2>
+      <ul>
+        <li *ngFor="let question of section.questions">{{ question }}</li>
+      </ul>
+    </div>
+  </div>
