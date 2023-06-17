@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
-import { CorreoService } from '../servicios/correo.service';
+
 
 @Component({
   selector: 'app-contacto',
@@ -27,7 +27,7 @@ export class ContactoComponent implements OnInit{
 
   submitForm() {
     if (this.contactForm.valid) {
-      // Enviar el formulario
+      // Enviar el formularigffgo
       /*const { name, apellido, email, message } = this.contactForm.value;
       //this.correoService.enviarCorreo(name, apellido, email, message)
         .subscribe(
