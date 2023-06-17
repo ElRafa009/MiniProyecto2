@@ -88,3 +88,45 @@
 .encuesta * {
   padding: 10px 15px;
 }
+
+.video-container{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .recomendacion {
+    margin-bottom: 30px;
+  }
+  .video-container {
+    margin: 30px auto;
+    max-width: 560px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .banner h1 {
+    font-size: 24px;
+  }
+  .banner p {
+    font-size: 16px;
+  }
+  .appointment-container {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .recomendacion {
+    margin-bottom: 15px;
+  }
+  .banner h1 {
+    font-size: 20px;
+  }
+  .banner p {
+    font-size: 14px;
+  }
+  .appointment-container {
+    font-size: 12px;
+  }
+}

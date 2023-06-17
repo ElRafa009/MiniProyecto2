@@ -25,6 +25,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 // Servicio
 import {ServicioMService} from './servicio-m.service'
 
@@ -94,6 +96,7 @@ import { VerificarComponent } from './verificar/verificar.component';
     ReactiveFormsModule,
     MatToolbarModule,
     MatGridListModule,
+    FlexLayoutModule,
     MatRadioModule,
     MatButtonModule,
     MatIconModule,
