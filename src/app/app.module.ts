@@ -56,6 +56,7 @@ import { Chart} from 'chart.js';
     PortafolioComponent,
     BuscarCitaComponent,
     DomseguroPipe,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

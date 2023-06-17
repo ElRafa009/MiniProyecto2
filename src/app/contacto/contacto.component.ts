@@ -1,55 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
-import { CorreoService } from '../servicios/correo.service';
+import { CorreoService } from '../correo.service';
 
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.css']
+  styleUrls: ['./contacto.component.css'],
 })
-export class ContactoComponent implements OnInit{
+export class ContactoComponent implements OnInit {
+  formulario = {
+    name: '',
+    apellido: '',
+    email: '',
+    message: '',
+  };
 
   contactForm!: FormGroup;
 
- // constructor(private correoService: CorreoService) { }
-  
- 
+  constructor(private correoService: CorreoService) {}
 
   ngOnInit() {
     this.contactForm = new FormGroup({
       name: new FormControl('', Validators.required),
       apellido: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      message: new FormControl('', Validators.required)
+      message: new FormControl('', Validators.required),
     });
   }
 
-  submitForm() {
+  submitForm(): void {
     if (this.contactForm.valid) {
-      // Enviar el formulario
-      /*const { name, apellido, email, message } = this.contactForm.value;
-      //this.correoService.enviarCorreo(name, apellido, email, message)
-        .subscribe(
-          () => {
-            console.log('Correo enviado correctamente');
-            // Aquí puedes agregar el código para mostrar un mensaje de éxito o redirigir a otra página
-          },
-          (          error: any) => {
-            console.error('Error al enviar el correo', error);
-            // Aquí puedes agregar el código para mostrar un mensaje de error
-          }
-        );*/
-      console.log(this.contactForm.value);
-
-    } else {
-      // Formulario inválido, mostrar errores
+      this.correoService
+        .contacto('https://proyectofinal-apis.onrender.com/contacto', this.contactForm.value)
+        .then((data) => {
+          alert("Correo enviado");
+          console.log(data);
+        })
+        .catch((err) => {
+          alert("Correo no enviado");
+          console.log(err);
+        });
+    }
+    else {
       this.validateAllFormFields(this.contactForm);
     }
   }
 
   validateAllFormFields(formGroup: FormGroup) {
-    Object.keys(formGroup.controls).forEach(field => {
+    Object.keys(formGroup.controls).forEach((field) => {
       const control = formGroup.get(field);
       if (control instanceof FormControl) {
         control.markAsTouched({ onlySelf: true });
@@ -59,5 +58,3 @@ export class ContactoComponent implements OnInit{
     });
   }
 }
-
-
