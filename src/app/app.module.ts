@@ -79,7 +79,10 @@ import { VerificarComponent } from './verificar/verificar.component';
     PortafolioComponent,
     BuscarCitaComponent,
     DomseguroPipe,
-    ContactoComponent
+    ContactoComponent,
+    VerificarComponent,
+    LoginComponent,
+    RegistrarUsuarioComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
