@@ -3,6 +3,11 @@ h1 {
     font-size: 36px;
     margin-top: 50px;
   }
+
+  .fecha{
+    color: rgb(7, 7, 248);
+    font-size: 40px;
+  }
   
   form {
     max-width: 800px;
