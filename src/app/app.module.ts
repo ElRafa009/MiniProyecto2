@@ -39,8 +39,31 @@ import { AyudaPreguntasComponent } from './ayuda-preguntas/ayuda-preguntas.compo
 import { GraficaComponent } from './grafica/grafica.component';
 //import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
+//LUIIIIIIIIIS
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat'
+import { ConfirmationResultService } from './services/confirmation-result.service';
+import * as firebase from 'firebase/app';
+
+
+  export const firebaseConfig = {
+    apiKey: "AIzaSyCnB9asTgDF2DUosOEN3mUGcYvjtyIeIlU",
+    authDomain: "proyecto-login-isc6c.firebaseapp.com",
+    projectId: "proyecto-login-isc6c",
+    storageBucket: "proyecto-login-isc6c.appspot.com",
+    messagingSenderId: "400359707658",
+    appId: "1:400359707658:web:9967596232989b241abbf3"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
 //Jacky Graficas
 import { Chart} from 'chart.js';
+import { LoginComponent } from './login/login.component';
+import { VerificarCorreoComponent } from './verificar-correo/verificar-correo.component';
+import { RecuperarPasswordComponent } from './recuperar-password/recuperar-password.component';
+import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
+import { VerificarComponent } from './verificar/verificar.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +82,7 @@ import { Chart} from 'chart.js';
     ContactoComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
