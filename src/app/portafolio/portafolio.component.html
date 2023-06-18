@@ -1,14 +1,12 @@
-
 <body>
-    <div class="container">
-        <figure *ngFor="let item of imagenes">
-          
-          <div class="card">
-            <img src="{{item.link}}" />
-            <div class="text-overlay">
-              <p>{{item.descripcion}}</p>
-            </div>
-          </div> 
-        </figure>
-      </div> 
+  <div class="card-columns">
+    <figure *ngFor="let item of imagenes">
+      <div class="card">
+          <img src="{{ item.link }}" />
+          <div class="text-overlay card-text">
+            <p>{{ item.descripcion }}</p>
+          </div>
+      </div>
+    </figure>
+  </div>
 </body>
