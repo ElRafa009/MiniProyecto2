@@ -55,6 +55,30 @@ export class ServicioMService {
       link:'https://cdn-3.expansion.mx/dims4/default/3a49e33/2147483647/strip/true/crop/1196x628+2+0/resize/1200x630!/format/jpg/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F42%2Ff0%2F12fae0f54405a9df5ef06afd20d6%2Fdr-simi-candidato-presidente.jpg',
       descripcion:'Vota por el que te cura !DR.SIMI¡'
     },
+    {
+      link:'https://depor.com/resizer/tzaiPm4kngAc-vHxi4td5-KYGM0=/1200x800/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/ZHO5MRSYXNDT5FGLMVFYH5JPMU.jpg',
+      descripcion:'El amor lo puedes encontrar'
+    },
+    {
+      link:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb8lpkxwQFtrmJMMCWv_byeKxRr13xJJuUUQ&usqp=CAU',
+      descripcion:'Nos encontramos en todos lados'
+    },
+    {
+      link:'https://farmaciasdesimilares.com/productosexclusivos/images/productos/md/simi-peluche-mariachi-1.jpg',
+      descripcion:'100% mexicanos'
+    },
+    {
+      link:'https://www.geekmi.news/__export/1664902465438/sites/debate/img/2022/10/04/black-adam-simi.jpg_423682103.jpg',
+      descripcion:'Nuestros heroes'
+    },
+    {
+      link:'https://m.media-amazon.com/images/I/51XJYlmlHjL.jpg',
+      descripcion:'Luchando por la salud'
+    },
+    {
+      link:'https://pbs.twimg.com/media/DB1Pfj9WAAIpQvz.jpg:large',
+      descripcion:'Simi siempre nos cuida'
+    },
 
   ]
 
