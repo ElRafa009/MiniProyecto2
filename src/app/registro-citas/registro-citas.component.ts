@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./registro-citas.component.css']
 })
 export class RegistroCitasComponent {
+  
  @Input() medico: string = 'ERR';
   resultado!: string;
   horario!: String;
