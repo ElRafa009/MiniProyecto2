@@ -15,18 +15,18 @@ export class AyudaPreguntasComponent {
     },
     {
       question: '¿Cómo puedo realizar una cita?',
-      answer: 'Puedes realizar una cita a través de nuestra página web en la seccion de "solicita cita".'
+      answer: 'Puedes realizar una cita a través de nuestra página web en la sección de "solicita cita".'
     },
     {
       question: '¿Cuál es nuestra política de citas?',
-      answer: 'Contamos con citas de lunes a domingo de 2 de la tarde a 8 de la noche, sin embargo no se pueden agendar citas que coincidan con una ya agendada.'
+      answer: 'Contamos con citas de lunes a domingo de 2 de la tarde a 8 de la noche. Sin embargo, no se pueden agendar citas que coincidan con una ya agendada.'
     },
     {
-      question: '¿Ofrecen mas servicios?',
-      answer: 'Sí, ofrecemos servicios no solo medico si no tambien, con dentista, veterianrio, optmetrista, etc. Consutla nuestra pagina para ver los diferentes servicios disponibles'
+      question: '¿Ofrecen más servicios?',
+      answer: 'Sí, ofrecemos servicios no solo médicos, sino también con dentista, veterinario, optometrista, etc. Consulta nuestra página para ver los diferentes servicios disponibles.'
     }
   ];
-
+  
   sections: any[] = [
     {
       title: 'Cuenta',
