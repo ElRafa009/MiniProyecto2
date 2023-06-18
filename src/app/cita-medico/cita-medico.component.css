@@ -1,40 +1,43 @@
 .my-card {
-    transition: all 0.3s ease-in-out;
-    transform: scale(1);
-  }
-  
-  .my-card:hover {
-    transform: scale(1.05);
-  }
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
 
-  .my-card {
-    height: 100%;
-  }
-  
-  .card-img-top {
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    height: 100%;
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-  }
+.my-card:hover {
+  transform: scale(1.05);
+}
 
-  .container {
-    padding-top: 3%
-  }
-  
-  .btn {
-    margin-top: auto;
-  }
-  
-  /* Estilo de transición */
-  .card:hover {
-    transform: scale(1.1);
-    transition: all 0.3s ease;
-  }
-  
+.my-card {
+  height: 100%;
+}
+
+.card-img-top {
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-body {
+  height: 100%;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+.container {
+  padding-top: 3%;
+}
+
+.btn {
+  margin-top: auto;
+}
+
+/* Estilo de transición */
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.text {
+  font-size: 16px;
+}
