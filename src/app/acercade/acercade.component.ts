@@ -33,6 +33,11 @@ export class AcercadeComponent {
     descripcion: "Hombre melancólico, amante del cine y en sus tiempos libre se dedica a salvar el mundo, programador de día, hombre enmascarado de noche",
   }
 
+  ana: usuario = {
+    nombre: "Ana Delia",
+    descripcion: "Descripcion de Ana"
+  }
+
   ngAfterViewInit(): void{
     const map = new Map('map').setView([21.85267,-102.32112], 13);
     tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
