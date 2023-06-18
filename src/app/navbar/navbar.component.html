@@ -6,12 +6,13 @@
     (click)="toggleCollapse()">
       <span class="navbar-toggler-icon"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link" aria-current="page" [routerLink]="['principal']">Inicio</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAdmin$ | async">
           <a class="nav-link" aria-current="page" [routerLink]="['reporte']">Agenda</a>
         </li>
         <li class="nav-item">
@@ -27,9 +28,20 @@
           <a class="nav-link" aria-current="page" [routerLink]="['ayuda']">Ayuda</a>
         </li>
       </ul>
-      <button class="btn btn-outline-success"><a [routerLink]="['menucita']">Solicita una cita</a></button>
-      <button class="btn btn-outline-success"><a [routerLink]="['login']">Registrarse</a></button>
-      <form class="d-flex" role="search">
+      
+      <button class="btn btn-outline-success" *ngIf="isLoggedIn$ | async">
+        <a [routerLink]="['menucita']">Solicita una cita</a>
+      </button>
+      
+      <button class="btn btn-outline-danger" *ngIf="isLoggedIn$ | async" (click)="logout()">Cerrar sesión</button>
+      
+      <span class="navbar-text ml-2" *ngIf="isLoggedIn$ | async">Correo: {{ userEmail$ | async }}</span>
+      
+      <button class="btn btn-outline-success" *ngIf="!(isLoggedIn$ | async)">
+        <a [routerLink]="['login']">Registrarse</a>
+      </button>
+      
+      <form class="d-flex" role="search" *ngIf="isAdmin$ | async">
         <input class="form-control me-2" type="search" placeholder="Buscar nombre" aria-label="Search" [(ngModel)]="nombre" name="nombre">
         <button class="btn btn-outline-success" type="submit" (click)="buscarCitas()">Buscar</button>
       </form>
