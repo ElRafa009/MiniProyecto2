@@ -1,17 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CalendarOptions, EventClickArg, EventInput } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction'; // useful for typechecking+
 import dayGridPlugin from '@fullcalendar/daygrid';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { CorreoService } from '../correo.service';
 
 @Component({
   selector: 'app-registro-citas',
   templateUrl: './registro-citas.component.html',
-  styleUrls: ['./registro-citas.component.css']
+  styleUrls: ['./registro-citas.component.css'],
 })
 export class RegistroCitasComponent {
- @Input() medico: string = 'ERR';
+  @Input() medico: string = 'ERR';
   resultado!: string;
   horario!: String;
   medico2!: void;
@@ -28,7 +38,7 @@ export class RegistroCitasComponent {
       day: 'Día',
       list: 'Agenda',
       prev: 'Anterior',
-      next: 'Siguiente'
+      next: 'Siguiente',
     },
   };
   eventsPromise: Promise<EventInput> | undefined;
@@ -36,7 +46,7 @@ export class RegistroCitasComponent {
   handleDateClick(arg: { dateStr: string }) {
     const selectedDate = new Date(arg.dateStr);
     const today = new Date();
-  
+
     const datosJSON = localStorage.getItem('datos');
     if (selectedDate < today) {
       Swal.fire({
@@ -49,12 +59,22 @@ export class RegistroCitasComponent {
       const datosGuardados = JSON.parse(datosJSON || '[]');
       const horasOcupadas = datosGuardados
         .filter((data: any) => data.horario === arg.dateStr)
-        .map((data: any) => new Date(data.horario + ' ' + data.formularioContacto.tiempo));
+        .map(
+          (data: any) =>
+            new Date(data.horario + ' ' + data.formularioContacto.tiempo)
+        );
       if (horasOcupadas.length > 0) {
         // la fecha ya tiene citas agendadas, verificar la hora seleccionada
-        const horasOcupadasStr = horasOcupadas.map((hora: { toISOString: () => string; }) => hora.toISOString().substring(11, 16));
-        const horaSeleccionada = new Date(arg.dateStr + ' ' + this.formularioContacto.value.tiempo);
-        const horaSeleccionadaStr = horaSeleccionada.toISOString().substring(11, 16);
+        const horasOcupadasStr = horasOcupadas.map(
+          (hora: { toISOString: () => string }) =>
+            hora.toISOString().substring(11, 16)
+        );
+        const horaSeleccionada = new Date(
+          arg.dateStr + ' ' + this.formularioContacto.value.tiempo
+        );
+        const horaSeleccionadaStr = horaSeleccionada
+          .toISOString()
+          .substring(11, 16);
         if (horasOcupadasStr.includes(horaSeleccionadaStr)) {
           Swal.fire({
             icon: 'error',
@@ -70,7 +90,7 @@ export class RegistroCitasComponent {
             icon: 'success',
             title: 'Tu fecha seleccionada es:',
             html: arg.dateStr,
-            timer: 2500,
+            timer: 2000,
             timerProgressBar: true,
             didOpen: () => {
               Swal.showLoading();
@@ -78,7 +98,7 @@ export class RegistroCitasComponent {
               if (b) {
                 b.textContent = Swal.getTimerLeft()?.toString() ?? '';
               }
-  
+
               timerInterval = window.setInterval(() => {
                 if (b) {
                   b.textContent = Swal.getTimerLeft()?.toString() ?? '';
@@ -89,7 +109,7 @@ export class RegistroCitasComponent {
               if (timerInterval) {
                 window.clearInterval(timerInterval);
               }
-            }
+            },
           }).then((result) => {
             /* Read more about handling dismissals below */
             if (result.dismiss === Swal.DismissReason.timer) {
@@ -125,7 +145,7 @@ export class RegistroCitasComponent {
             if (timerInterval) {
               window.clearInterval(timerInterval);
             }
-          }
+          },
         }).then((result) => {
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
@@ -136,7 +156,6 @@ export class RegistroCitasComponent {
       }
     }
   }
-  
 
   formularioContacto = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -145,9 +164,7 @@ export class RegistroCitasComponent {
       Validators.required,
       Validators.minLength(5),
     ]),
-    tiempo: new FormControl('', [
-      Validators.required,
-    ]),
+    tiempo: new FormControl('', [Validators.required]),
   });
 
   submit() {
@@ -206,11 +223,35 @@ export class RegistroCitasComponent {
         confirmButtonText: '¡Sí, aceptar!',
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire('¡Agendado!', 'Tu cita ha sido agendada.', 'success');
+          this.correoService
+            .contacto(
+              'https://proyectofinal-apis.onrender.com/agendar',
+              data
+            )
+            .then((enviado) => {
+              Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Hemos enviado un correo con la información de la cita.', 'success');
+              console.log(enviado);
+            })
+            .catch((err) => {
+              Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Lamentablemente, el correo con la información de la cita no se pudo enviar.', 'success');
+              console.log(err);
+            });
           datosGuardados.push(data);
           localStorage.setItem('datos', JSON.stringify(datosGuardados));
         }
       });
     }
+  }
+
+  isLoggedIn$: Observable<boolean>;
+  userEmail$: Observable<string | null>;
+  constructor(
+    private correoService: CorreoService,
+    private router: Router,
+    private elementRef: ElementRef,
+    private authService: AuthService
+  ) {
+    this.isLoggedIn$ = this.authService.isLoggedIn();
+    this.userEmail$ = this.authService.getUserEmail();
   }
 }

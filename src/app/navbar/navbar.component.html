@@ -35,7 +35,7 @@
       
       <button class="btn btn-outline-danger" *ngIf="isLoggedIn$ | async" (click)="logout()">Cerrar sesión</button>
       
-      <span class="navbar-text ml-2" *ngIf="isLoggedIn$ | async">Correo: {{ userEmail$ | async }}</span>
+      <span class="navbar-text ml-2" *ngIf="userEmail$ | async">Correo: {{ userEmail$ | async }}</span>
       
       <button class="btn btn-outline-success" *ngIf="!(isLoggedIn$ | async)">
         <a [routerLink]="['login']">Registrarse</a>

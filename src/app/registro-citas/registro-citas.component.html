@@ -24,7 +24,7 @@
   </p>
   <p>
     Mail:
-    <input type="text" formControlName="mail" />
+    <input type="text" formControlName="mail" *ngIf="isLoggedIn$ | async" value="{{ userEmail$ | async }}"/>
     <span *ngIf="this.formularioContacto.get('mail')?.errors?.['required']">
       (El mail no puede quedar vacío)
     </span>
