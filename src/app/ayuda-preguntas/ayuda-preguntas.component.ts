@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./ayuda-preguntas.component.css']
 })
 export class AyudaPreguntasComponent {
-
-
   faqs: any[] = [
     {
       question: '¿Cuál es el horario de atención?',
@@ -53,4 +51,5 @@ export class AyudaPreguntasComponent {
       ]
     }
   ];
+
 }

@@ -33,6 +33,7 @@
     </span>
   </p>
   <h4>Seleccione una fecha:</h4>
+  <h4 class="fecha">Fecha seleccionada: {{ horario }}</h4>
   <full-calendar
     [options]="calendarOptions"
     [events]="eventsPromise | async"

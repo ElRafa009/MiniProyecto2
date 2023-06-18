@@ -64,10 +64,74 @@ export class RegistroCitasComponent {
           });
         } else {
           // la fecha seleccionada tiene citas agendadas pero la hora seleccionada está disponible
+          let timerInterval: number | undefined;
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Tu fecha seleccionada es:',
+            html: arg.dateStr,
+            timer: 2500,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+              const b = Swal.getHtmlContainer()?.querySelector('b');
+              if (b) {
+                b.textContent = Swal.getTimerLeft()?.toString() ?? '';
+              }
+  
+              timerInterval = window.setInterval(() => {
+                if (b) {
+                  b.textContent = Swal.getTimerLeft()?.toString() ?? '';
+                }
+              }, 100);
+            },
+            willClose: () => {
+              if (timerInterval) {
+                window.clearInterval(timerInterval);
+              }
+            }
+          }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+              console.log('I was closed by the timer');
+            }
+          });
           this.horario = arg.dateStr;
         }
       } else {
         // la fecha seleccionada no tiene citas agendadas, seleccionar la hora
+        let timerInterval: number | undefined;
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Tu fecha seleccionada es:',
+          html: arg.dateStr,
+          timer: 2500,
+          timerProgressBar: true,
+          didOpen: () => {
+            Swal.showLoading();
+            const b = Swal.getHtmlContainer()?.querySelector('b');
+            if (b) {
+              b.textContent = Swal.getTimerLeft()?.toString() ?? '';
+            }
+
+            timerInterval = window.setInterval(() => {
+              if (b) {
+                b.textContent = Swal.getTimerLeft()?.toString() ?? '';
+              }
+            }, 100);
+          },
+          willClose: () => {
+            if (timerInterval) {
+              window.clearInterval(timerInterval);
+            }
+          }
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            console.log('I was closed by the timer');
+          }
+        });
         this.horario = arg.dateStr;
       }
     }
