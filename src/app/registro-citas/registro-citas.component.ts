@@ -1,11 +1,5 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-} from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import {Component,ElementRef,EventEmitter,Input,Output,} from '@angular/core';
+import { FormGroup, FormControl, Validators,FormBuilder } from '@angular/forms';
 import { CalendarOptions, EventClickArg, EventInput } from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction'; // useful for typechecking+
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -14,6 +8,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { CorreoService } from '../correo.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-registro-citas',
@@ -168,9 +163,14 @@ export class RegistroCitasComponent {
   });
 
   submit() {
-    if (this.formularioContacto.valid)
-      this.resultado = 'Todos los datos son válidos';
-    this.guardarDatos();
+    if (!this.horario) {
+      Swal.fire({
+          icon: 'error',
+          title: 'Por favor selecciona una fecha antes de continuar'
+      });
+      return;
+  }
+  this.guardarDatos();
   }
 
   @Output() medicoSeleccionado = new EventEmitter<string>();
@@ -181,66 +181,49 @@ export class RegistroCitasComponent {
   }
 
   guardarDatos() {
-    const datosGuardadosJSON = localStorage.getItem('datos');
-    let datosGuardados: any[] = [];
-    if (datosGuardadosJSON) {
-      datosGuardados = JSON.parse(datosGuardadosJSON);
-    }
-
-    // Verificar si la fecha y hora seleccionadas ya existen en los datos guardados
     const fechaHoraSeleccionada = new Date(
       this.horario + ' ' + this.formularioContacto.value.tiempo
     );
-    const fechaHoraExistente = datosGuardados.find(
-      (dato) =>
-        new Date(dato.horario).getTime() === fechaHoraSeleccionada.getTime()
-    );
-    if (fechaHoraExistente) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: '¡Este horario ya ha sido agendado!',
-        footer: '<p>Intenta utilizando otro horario</p>',
-      });
-      // alert('La fecha y hora seleccionadas intenta seleccionando otra hora o fecha.');
-    } else {
-      // Guardar los datos
-      const data = {
-        formularioContacto: this.formularioContacto.value,
-        horario: fechaHoraSeleccionada.toISOString().substring(0, 10),
-        medico: this.medico,
-      };
-      //datosGuardados.push(data);
-      //localStorage.setItem('datos', JSON.stringify(datosGuardados));
-      //alert("Ok");
-      Swal.fire({
-        title: '¿Estás seguro?',
-        text: '¡No podrás cambiar la agenda después!',
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: '¡Sí, aceptar!',
-      }).then((result) => {
-        if (result.isConfirmed) {
-          this.correoService
-            .contacto(
-              'https://proyectofinal-apis.onrender.com/agendar',
-              data
-            )
-            .then((enviado) => {
-              Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Hemos enviado un correo con la información de la cita.', 'success');
-              console.log(enviado);
-            })
-            .catch((err) => {
-              Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Lamentablemente, el correo con la información de la cita no se pudo enviar.', 'success');
-              console.log(err);
-            });
-          datosGuardados.push(data);
-          localStorage.setItem('datos', JSON.stringify(datosGuardados));
-        }
-      });
-    }
+
+    const data = {
+      nombre: this.formularioContacto.value.nombre,
+      apellido: this.formularioContacto.value.apellido,
+      mail: this.formularioContacto.value.mail,
+      fecha: fechaHoraSeleccionada.toISOString().substring(0, 10),
+      hora: this.formularioContacto.value.tiempo,
+      medico: this.medico
+    };
+
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¡No podrás cambiar la agenda después!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '¡Sí, aceptar!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.correoService
+          .contacto('https://proyectofinal-apis.onrender.com/agendar', data)
+          .then((enviado) => {
+            Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Hemos enviado un correo con la información de la cita.', 'success');
+            console.log(enviado);
+          })
+          .catch((err) => {
+            Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Lamentablemente, el correo con la información de la cita no se pudo enviar.', 'success');
+            console.log(err);
+          });
+
+        this.firestore.collection('citas').add(data)
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+      }
+    });
   }
 
   isLoggedIn$: Observable<boolean>;
@@ -249,9 +232,19 @@ export class RegistroCitasComponent {
     private correoService: CorreoService,
     private router: Router,
     private elementRef: ElementRef,
-    private authService: AuthService
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private firestore: AngularFirestore,
   ) {
     this.isLoggedIn$ = this.authService.isLoggedIn();
     this.userEmail$ = this.authService.getUserEmail();
+
+    this.formularioContacto = this.formBuilder.group({
+      nombre: ['', [Validators.required, Validators.minLength(5)]],
+      apellido: ['', [Validators.required, Validators.minLength(5)]],
+      mail: ['', [Validators.required, Validators.email]],
+      tiempo: ['', Validators.required]
+  });
+
   }
 }
