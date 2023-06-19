@@ -1,22 +1,40 @@
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Email</th>
-      <th>Hora</th>
-      <th>Especialidad</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let dato of datos, let i=index" [ngClass]="{'par': i % 2 === 0, 'impar': i % 2 === 1}">
-      <td>{{ dato.formularioContacto.nombre }}</td>
-      <td>{{ dato.formularioContacto.apellido }}</td>
-      <td>{{ dato.formularioContacto.mail }}</td>
-      <td>{{ dato.formularioContacto.tiempo }}</td>
-      <td>{{ dato.medico }}</td>
-      <td>{{ dato.horario }}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="container2">
+  <h2>Administrar Citas</h2>
+  <form [formGroup]="citaForm" (ngSubmit)="guardarCita()">
+    <input type="text" formControlName="nombre" placeholder="Nombre" required>
+    <input type="text" formControlName="apellido" placeholder="Apellido" required>
+    <input type="email" formControlName="mail" placeholder="Email" required>
+    <input type="date" formControlName="fecha" placeholder="Fecha" required>
+    <input type="time" formControlName="hora" placeholder="Hora" required>
+    <input type="text" formControlName="medico" placeholder="Medico" required>
+    <button type="submit" [disabled]="citaForm.invalid">Guardar</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Email</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Medico</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citas | async">
+        <td>{{ cita.nombre }}</td>
+        <td>{{ cita.apellido }}</td>
+        <td>{{ cita.mail }}</td>
+        <td>{{ cita.fecha }}</td>
+        <td>{{ cita.hora }}</td>
+        <td>{{ cita.medico }}</td>
+        <td>
+          <button (click)="editarCita(cita)">Editar</button>
+          <button (click)="eliminarCita(cita.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

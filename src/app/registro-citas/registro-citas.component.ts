@@ -184,8 +184,11 @@ export class RegistroCitasComponent {
     const fechaHoraSeleccionada = new Date(
       this.horario + ' ' + this.formularioContacto.value.tiempo
     );
-
+  
+    const id = this.firestore.createId();
+  
     const data = {
+      id: id,  // Agrega el ID al objeto
       nombre: this.formularioContacto.value.nombre,
       apellido: this.formularioContacto.value.apellido,
       mail: this.formularioContacto.value.mail,
@@ -193,7 +196,7 @@ export class RegistroCitasComponent {
       hora: this.formularioContacto.value.tiempo,
       medico: this.medico
     };
-
+  
     Swal.fire({
       title: '¿Estás seguro?',
       text: '¡No podrás cambiar la agenda después!',
@@ -214,10 +217,10 @@ export class RegistroCitasComponent {
             Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Lamentablemente, el correo con la información de la cita no se pudo enviar.', 'success');
             console.log(err);
           });
-
-        this.firestore.collection('citas').add(data)
-          .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
+  
+        this.firestore.collection('citas').doc(id).set(data)
+          .then(() => {
+            console.log("Document written with ID: ", id);
           })
           .catch((error) => {
             console.error("Error adding document: ", error);

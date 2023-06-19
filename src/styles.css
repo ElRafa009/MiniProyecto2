@@ -54,8 +54,131 @@ body{
 }
 
 
-.container {
+
+  
+  .container {
     text-align: center;
     font-family: 'Teko', sans-serif;
     font-size: 25px;
+  }
+  
+  .container form {
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .container input[type="text"],
+  .container input[type="email"],
+  .container input[type="date"],
+  .container input[type="time"],
+  .container button[type="submit"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .container button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .container table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .container th,
+  .container td {
+    padding: 8px;
+  }
+  
+  .container th {
+    background-color: #08cbfc;
+  }
+  
+  .container tr:nth-child(odd) {
+    background-color: #65f7b3a6;
+  }
+  
+  .container tr:nth-child(even) {
+    background-color: #70deffa9;
+  }
+
+
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 25px;
+  }
+  
+  .container2 h2 {
+    margin-top: 20px;
+  }
+  
+  .container2 form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: 20px;
+  }
+  
+  .container2 form input {
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .container2 form button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .container2 form button:hover {
+    background-color: #218838;
+  }
+  
+  .container2 table {
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .container2 th, .container2 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .container2 th {
+    background-color: #08cbfc;
+  }
+  
+  .container2 tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .container2 tr:hover {
+    background-color: #ddd;
+  }
+  
+  .container2 button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 0 5px;
+  }
+  
+  .container2 button:hover {
+    background-color: #218838;
   }
