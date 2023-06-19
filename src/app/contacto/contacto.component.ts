@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { FormGroup, FormControl } from '@angular/forms';
 import { CorreoService } from '../correo.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contacto',
@@ -34,11 +35,11 @@ export class ContactoComponent implements OnInit {
       this.correoService
         .contacto('https://proyectofinal-apis.onrender.com/contacto', this.contactForm.value)
         .then((data) => {
-          alert("Correo enviado");
+          Swal.fire('Correo enviado', '', 'success');
           console.log(data);
         })
         .catch((err) => {
-          alert("Correo no enviado");
+          Swal.fire('Error', 'El correo no se pudo enviar', 'error');
           console.log(err);
         });
     }

@@ -196,6 +196,12 @@ export class RegistroCitasComponent {
       hora: this.formularioContacto.value.tiempo,
       medico: this.medico
     };
+
+    const data2 = {
+      formularioContacto: this.formularioContacto.value,
+      horario: fechaHoraSeleccionada.toISOString().substring(0, 10),
+      medico: this.medico,
+    };
   
     Swal.fire({
       title: '¿Estás seguro?',
@@ -208,7 +214,7 @@ export class RegistroCitasComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.correoService
-          .contacto('https://proyectofinal-apis.onrender.com/agendar', data)
+          .contacto('https://proyectofinal-apis.onrender.com/agendar', data2)
           .then((enviado) => {
             Swal.fire('¡Agendado!', 'Tu cita ha sido agendada. Hemos enviado un correo con la información de la cita.', 'success');
             console.log(enviado);
