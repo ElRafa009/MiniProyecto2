@@ -84,7 +84,8 @@ import { VerificarComponent } from './verificar/verificar.component';
     ContactoComponent,
     VerificarComponent,
     LoginComponent,
-    RegistrarUsuarioComponent
+    RegistrarUsuarioComponent,
+    AyudaPreguntasComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
